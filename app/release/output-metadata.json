@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.example.presencia",
+  "applicationId": "com.shivangsagar.presencia",
   "variantName": "release",
   "elements": [
     {

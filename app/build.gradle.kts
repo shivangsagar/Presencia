@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.presencia"
+    namespace = "com.shivangsagar.presencia"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "com.example.presencia"
+        applicationId = "com.shivangsagar.presencia"
         minSdk = 24
         targetSdk = 37
         versionCode = 1

@@ -1,4 +1,4 @@
-package com.example.presencia.ui.theme
+package com.shivangsagar.presencia.ui.theme
 
 import android.app.Activity
 import android.os.Build
