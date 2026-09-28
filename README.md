@@ -38,23 +38,9 @@ Presencia works completely **offline**, with attendance data stored locally on t
 
 ## Screenshots
 
-### Add Subject
-
-<p align="center">
-  <img src="screenshots/add_subjects.jpeg" width="300" alt="Add Subject">
-</p>
-
-### Home Screen
-
-<p align="center">
-  <img src="screenshots/black_theme.jpeg" width="300" alt="Presencia Home Screen">
-</p>
-
-### Attendance Calendar
-
-<p align="center">
-  <img src="screenshots/second_screen.jpeg" width="300" alt="Attendance Calendar">
-</p>
+| Add Subject | Home Screen | Attendance Calendar |
+| :---: | :---: | :---: |
+| <img src="screenshots/add_subjects.jpeg" width="200" alt="Add Subject"> | <img src="screenshots/black_theme.jpeg" width="200" alt="Presencia Home Screen"> | <img src="screenshots/second_screen.jpeg" width="200" alt="Attendance Calendar"> |
 
 ---
 
@@ -229,7 +215,7 @@ Attendance records are stored locally on the device and are not uploaded to any 
 
 <p align="center">
   <a href="../../releases/latest/download/Presencia.apk">
-    <img src="https://img.shields.io/badge/Download-Presencia%20APK-brightgreen?style=for-the-badge&logo=android" alt="Download Presencia APK">
+    <img src="https://img.shields.io/badge/Download-Presencia%20APK-white?style=for-the-badge&logo=android&logoColor=green&labelColor=white" alt="Download Presencia APK">
   </a>
 </p>
 
