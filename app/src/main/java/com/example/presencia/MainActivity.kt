@@ -52,13 +52,21 @@ class StorageManager(context: Context) {
         val type = object : TypeToken<List<SubjectData>>() {}.type
         return gson.fromJson(json, type)
     }
+
+    fun saveTheme(isDarkTheme: Boolean) {
+        prefs.edit().putBoolean("is_dark_theme", isDarkTheme).apply()
+    }
+
+    fun getTheme(): Boolean {
+        return prefs.getBoolean("is_dark_theme", false)
+    }
 }
 
 class PresenciaViewModel(application: Application) : AndroidViewModel(application) {
     private val storage = StorageManager(application)
 
     var subjects = mutableStateListOf<SubjectData>()
-    var isDarkTheme by mutableStateOf(false)
+    var isDarkTheme by mutableStateOf(storage.getTheme())
     var selectAllMode by mutableStateOf(false)
 
     init {
@@ -67,6 +75,11 @@ class PresenciaViewModel(application: Application) : AndroidViewModel(applicatio
 
     private fun saveData() {
         storage.saveSubjects(subjects)
+    }
+
+    fun toggleTheme() {
+        isDarkTheme = !isDarkTheme
+        storage.saveTheme(isDarkTheme)
     }
 
     fun addSubject(name: String) {
@@ -213,7 +226,7 @@ fun AppNavigation(viewModel: PresenciaViewModel) {
                 TopAppBar(
                     title = { Text("Presencia", fontWeight = FontWeight.Bold) },
                     actions = {
-                        IconButton(onClick = { viewModel.isDarkTheme = !viewModel.isDarkTheme }) {
+                        IconButton(onClick = { viewModel.toggleTheme() }) {
                             Icon(
                                 imageVector = if (viewModel.isDarkTheme) Icons.Default.NightsStay else Icons.Default.WbSunny,
                                 contentDescription = "Theme",
@@ -265,7 +278,13 @@ fun AppNavigation(viewModel: PresenciaViewModel) {
 
 @Composable
 fun HomeScreen(viewModel: PresenciaViewModel, paddingValues: PaddingValues, onSubjectClick: (String) -> Unit) {
-    Column(modifier = Modifier.padding(paddingValues).padding(16.dp).fillMaxSize()) {
+    Column(
+        modifier = Modifier
+            .padding(paddingValues)
+            .padding(16.dp)
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
+    ) {
         viewModel.subjects.forEachIndexed { index, subject ->
             SubjectItem(index + 1, subject, viewModel, onSubjectClick)
             Spacer(modifier = Modifier.height(12.dp))
@@ -424,7 +443,13 @@ fun CalendarScreen(subject: SubjectData, viewModel: PresenciaViewModel, paddingV
         )
     }
 
-    Column(modifier = Modifier.padding(16.dp).windowInsetsPadding(WindowInsets.statusBars).fillMaxSize()) {
+    Column(
+        modifier = Modifier
+            .padding(16.dp)
+            .windowInsetsPadding(WindowInsets.statusBars)
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
+    ) {
 
         // Back to Home Button Row
         Row(
