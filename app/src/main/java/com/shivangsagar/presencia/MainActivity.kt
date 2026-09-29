@@ -213,7 +213,13 @@ fun AppNavigation(viewModel: PresenciaViewModel) {
                 )
             },
             confirmButton = {
-                TextButton(onClick = { viewModel.addSubject(newSubjectName); newSubjectName = ""; showAddDialog = false }) {
+                TextButton(onClick = {
+                    if (newSubjectName.isNotBlank()) {
+                        viewModel.addSubject(newSubjectName.trim())
+                        newSubjectName = ""
+                        showAddDialog = false
+                    }
+                }) {
                     Text("Add", color = MaterialTheme.colorScheme.onBackground)
                 }
             }
@@ -286,7 +292,9 @@ fun HomeScreen(viewModel: PresenciaViewModel, paddingValues: PaddingValues, onSu
             .verticalScroll(rememberScrollState())
     ) {
         viewModel.subjects.forEachIndexed { index, subject ->
-            SubjectItem(index + 1, subject, viewModel, onSubjectClick)
+            key(subject.id) {
+                SubjectItem(index + 1, subject, viewModel, onSubjectClick)
+            }
             Spacer(modifier = Modifier.height(12.dp))
         }
     }
@@ -296,7 +304,7 @@ fun HomeScreen(viewModel: PresenciaViewModel, paddingValues: PaddingValues, onSu
 fun SubjectItem(index: Int, subject: SubjectData, viewModel: PresenciaViewModel, onSubjectClick: (String) -> Unit) {
     var expanded by remember { mutableStateOf(false) }
     var editDialog by remember { mutableStateOf(false) }
-    var editName by remember { mutableStateOf(subject.name) }
+    var editName by remember(subject.id, subject.name) { mutableStateOf(subject.name) }
 
     val total = subject.attendanceData.size
     val present = subject.attendanceData.values.count { it }
@@ -310,7 +318,12 @@ fun SubjectItem(index: Int, subject: SubjectData, viewModel: PresenciaViewModel,
             titleContentColor = MaterialTheme.colorScheme.onBackground,
             textContentColor = MaterialTheme.colorScheme.onBackground,
             confirmButton = {
-                TextButton(onClick = { viewModel.updateSubjectName(subject.id, editName); editDialog = false }) {
+                TextButton(onClick = {
+                    if (editName.isNotBlank()) {
+                        viewModel.updateSubjectName(subject.id, editName.trim())
+                        editDialog = false
+                    }
+                }) {
                     Text("Save", color = MaterialTheme.colorScheme.onBackground)
                 }
             },
@@ -366,8 +379,21 @@ fun SubjectItem(index: Int, subject: SubjectData, viewModel: PresenciaViewModel,
                     onDismissRequest = { expanded = false },
                     modifier = Modifier.background(MaterialTheme.colorScheme.background).border(1.dp, MaterialTheme.colorScheme.onBackground)
                 ) {
-                    DropdownMenuItem(text = { Text("Edit", color = MaterialTheme.colorScheme.onBackground) }, onClick = { expanded = false; editDialog = true })
-                    DropdownMenuItem(text = { Text("Delete", color = MaterialTheme.colorScheme.onBackground) }, onClick = { expanded = false; viewModel.deleteSubject(subject.id) })
+                    DropdownMenuItem(
+                        text = { Text("Edit", color = MaterialTheme.colorScheme.onBackground) },
+                        onClick = {
+                            editName = subject.name
+                            expanded = false
+                            editDialog = true
+                        }
+                    )
+                    DropdownMenuItem(
+                        text = { Text("Delete", color = MaterialTheme.colorScheme.onBackground) },
+                        onClick = {
+                            expanded = false
+                            viewModel.deleteSubject(subject.id)
+                        }
+                    )
                 }
             }
         }
