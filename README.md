@@ -168,8 +168,8 @@ Attendance records are stored locally on the device and are not uploaded to any 
 | Configuration | Value |
 |---|---|
 | **Application ID** | `com.example.presencia` |
-| **Version** | `1.0.0` |
-| **Version Code** | `1` |
+| **Version** | `1.0.1` |
+| **Version Code** | `2` |
 | **Minimum SDK** | `24` |
 | **Target SDK** | `37` |
 | **Compile SDK** | `37` |
@@ -211,7 +211,7 @@ Attendance records are stored locally on the device and are not uploaded to any 
 
 ## Download
 
-### Presencia v1.0.0
+### Presencia v1.0.1
 
 <p align="center">
   <a href="../../releases/latest/download/Presencia.apk">
@@ -240,7 +240,7 @@ The APK is distributed through the **GitHub Releases** section.
 
 **Stable / Completed**
 
-Presencia **v1.0.0** is the completed and final version of the application.
+Presencia **v1.0.1** is the completed and final version of the application.
 
 No further feature updates are planned for this project.
 
