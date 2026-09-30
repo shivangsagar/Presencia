@@ -1,0 +1,1 @@
+Updated version 1.0.1 with the latest stable release of Presencia.

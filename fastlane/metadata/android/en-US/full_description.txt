@@ -1,0 +1,17 @@
+Presencia is a simple, modern and offline attendance tracking app for Android.
+
+Features:
+
+* Add subjects with custom names
+* Edit and delete subjects
+* Mark class dates as Present or Absent
+* View attendance records using a monthly calendar
+* View Present, Absent and Total class counts
+* Automatic attendance percentage calculation
+* Light and Dark themes
+* Local device storage
+* No account required
+* No internet connection required
+* No cloud synchronization
+
+All attendance data is stored locally on the device.
