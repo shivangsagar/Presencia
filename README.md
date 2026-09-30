@@ -167,7 +167,7 @@ Attendance records are stored locally on the device and are not uploaded to any 
 
 | Configuration | Value |
 |---|---|
-| **Application ID** | `com.example.presencia` |
+| **Application ID** | `com.shivangsagar.presencia` |
 | **Version** | `1.0.1` |
 | **Version Code** | `2` |
 | **Minimum SDK** | `24` |
