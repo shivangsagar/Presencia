@@ -1,0 +1,1 @@
+Maintenance release with F-Droid compatibility and reproducible-build improvements.
