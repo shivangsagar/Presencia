@@ -1,0 +1,1 @@
+Enabled R8 code shrinking and optimization for the release build.
