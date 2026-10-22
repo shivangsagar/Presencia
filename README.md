@@ -2,7 +2,11 @@
 <h1 align="center">Presencia</h1>
 
 <p align="center">
-  <img src="assets/app-icon.png" alt="Presencia App Icon" width="120">
+  <a href="https://f-droid.org/packages/com.shivangsagar.presencia/">
+    <img src="https://f-droid.org/badge/get-it-on.png"
+         alt="Get it on F-Droid"
+         height="80">
+  </a>
 </p>
 
 <h3 align="center">Your Attendance. Your Rules.</h3>
@@ -121,24 +125,17 @@ Each subject provides a summary of your recorded attendance:
 
 The attendance percentage is calculated automatically using:
 
-\[
-\text{Attendance \%} =
-\frac{\text{Present Classes}}{\text{Total Classes}}\times100
-\]
+**Attendance Percentage**
+
+`(Present Classes / Total Classes) × 100`
 
 Where:
 
-\[
-\text{Total Classes}=\text{Present}+\text{Absent}
-\]
+`Total Classes = Present Classes + Absent Classes`
 
-**Example**
+**Example:** 18 present classes and 2 absent classes.
 
-Suppose you attended 18 classes and missed 2 classes.
-
-\[
-\text{Attendance \%}=\frac{18}{18+2}\times100=90\%
-\]
+`(18 / 20) × 100 = 90%`
 
 Presencia displays the calculated attendance percentage as an integer.
 
