@@ -1,261 +1,367 @@
+
 <h1 align="center">Presencia</h1>
 
 <p align="center">
-  A simple, modern and offline attendance tracking app for Android.
+  <img src="assets/app-icon.png" alt="Presencia App Icon" width="120">
 </p>
 
-<p align="center"><img src="https://img.shields.io/badge/Platform-Android-green" alt="Platform"> <img src="https://img.shields.io/badge/Language-Kotlin-purple" alt="Kotlin"> <img src="https://img.shields.io/badge/UI-Jetpack%20Compose-blue" alt="Jetpack Compose"> <img src="https://img.shields.io/badge/Min%20SDK-24-orange" alt="Minimum SDK"> <img src="https://img.shields.io/badge/Target%20SDK-37-red" alt="Target SDK"> <img src="https://img.shields.io/badge/Version-1.0.0-informational" alt="Version"> <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License"></p>
-
----
-
-## About
-
-**Presencia** is a simple and modern Android application designed to help students easily record, manage and monitor their class attendance subject by subject.
-
-The application provides a calendar-based interface for recording attendance on individual dates and automatically calculating attendance statistics.
-
-Presencia works completely **offline**, with attendance data stored locally on the device. No account, internet connection or cloud service is required.
-
----
-
-## Features
-
-- Add subjects with custom names
-- Edit existing subject names
-- Delete subjects
-- Mark individual class dates as Present or Absent
-- View attendance records through a monthly calendar
-- Easily identify attendance status using color indicators
-- View Present, Absent and Total class counts
-- Automatic attendance percentage calculation
-- Light and Dark theme support
-- Completely offline
-- Local device storage
-- No login or account required
-- No cloud synchronization required
-
----
-
-## Screenshots
-
-| Add Subject | Home Screen | Attendance Calendar |
-| :---: | :---: | :---: |
-| <img src="screenshots/add_subjects.jpeg" width="200" alt="Add Subject"> | <img src="screenshots/black_theme.jpeg" width="200" alt="Presencia Home Screen"> | <img src="screenshots/second_screen.jpeg" width="200" alt="Attendance Calendar"> |
-
----
-
-## Attendance Tracking
-
-Presencia uses a simple color-based system to represent attendance on the calendar.
-
-| Color | Meaning |
-|---|---|
-| 🟩 Green | Present |
-| 🟥 Red | Absent |
-| ⬜ Unmarked | No attendance recorded |
-
-This makes it easy to identify attendance patterns directly from the calendar.
-
----
-
-## Attendance Statistics
-
-For every subject, Presencia displays:
-
-- **Present** — Number of classes attended
-- **Absent** — Number of classes missed
-- **Total** — Total classes recorded
-- **Percentage** — Overall attendance percentage
-
-### Formula
-
-    Attendance Percentage = (Present Classes / Total Classes) × 100
-
-Where:
-
-    Total Classes = Present Classes + Absent Classes
-
-### Example
-
-    Present = 2
-    Absent  = 1
-    Total   = 3
-
-    Attendance Percentage = (2 / 3) × 100
-                          = 66.67%
-
-The application displays the calculated percentage as an integer.
-
----
-
-## Subject Management
-
-### Add a Subject
-
-Tap the **+** button on the home screen and enter the name of the subject.
-
-Example:
-
-    Geotechnical Engineering
-
-The subject will then appear on the home screen.
-
-### Edit a Subject
-
-Open the **three-dot menu** associated with a subject and select the **Edit** option to change the subject name.
-
-### Delete a Subject
-
-A subject can be removed using the **Delete** option from the three-dot menu.
-
----
-
-## Themes
-
-Presencia supports two visual themes:
-
-- **Light Theme**
-- **Dark Theme**
-
-The theme can be switched directly from the home screen using the theme toggle.
-
----
-
-## Offline & Local Storage
-
-Presencia is designed to work completely offline.
-
-All attendance information is stored locally on the user's device.
-
-### No Account Required
-
-There is no registration or login system.
-
-### No Internet Required
-
-Attendance can be recorded and viewed without an internet connection.
-
-### No Cloud Synchronization
-
-Attendance records are not synchronized with any external server or cloud service.
-
----
-
-## Privacy
-
-Presencia does not require personal accounts or online services to function.
-
-Attendance records are stored locally on the device and are not uploaded to any external server.
-
----
-
-## Tech Stack
-
-| Technology | Purpose |
-|---|---|
-| **Kotlin** | Primary programming language |
-| **Jetpack Compose** | User interface development |
-| **Material 3** | UI components and design |
-| **AndroidX** | Android libraries and components |
-| **Gson** | Local data serialization |
-| **ViewModel** | UI state management |
-| **Gradle Kotlin DSL** | Project and build configuration |
-
----
-
-## Android Configuration
-
-| Configuration | Value |
-|---|---|
-| **Application ID** | `com.shivangsagar.presencia` |
-| **Version** | `1.0.1` |
-| **Version Code** | `2` |
-| **Minimum SDK** | `24` |
-| **Target SDK** | `37` |
-| **Compile SDK** | `37` |
-| **Java Version** | `11` |
-| **UI Framework** | Jetpack Compose |
-
----
-
-## Project Structure
-
-    Presencia/
-    │
-    ├── app/
-    │   └── Android application source
-    │
-    ├── assets/
-    │   └── app-icon.png
-    │
-    ├── screenshots/
-    │   ├── add_subjects.jpeg
-    │   ├── black_theme.jpeg
-    │   └── second_screen.jpeg
-    │
-    ├── apk/
-    │   └── Presencia.apk
-    │
-    ├── gradle/
-    │   └── Gradle configuration
-    │
-    ├── build.gradle.kts
-    ├── settings.gradle.kts
-    ├── gradle.properties
-    ├── gradlew
-    ├── gradlew.bat
-    ├── LICENSE
-    └── README.md
-
----
-
-## Download
-
-### Presencia v1.0.1
+<h3 align="center">Your Attendance. Your Rules.</h3>
 
 <p align="center">
-  <a href="../../releases/latest/download/Presencia.apk">
-    <img src="https://img.shields.io/badge/Download-Presencia%20APK-white?style=for-the-badge&logo=android&logoColor=green&labelColor=white" alt="Download Presencia APK">
+  A minimal, modern, and completely offline attendance tracker for Android.
+  <br>
+  Track classes, monitor attendance, and stay on top of your academic goals — without accounts or cloud dependency.
+</p>
+
+<p align="center">
+  <a href="https://f-droid.org/packages/com.shivangsagar.presencia/">
+    <img src="https://img.shields.io/badge/Get_it_on-F--Droid-1976D2?style=for-the-badge&logo=f-droid&logoColor=white" alt="Get Presencia on F-Droid">
+  </a>
+  <a href="https://github.com/shivangsagar/Presencia/releases/latest">
+    <img src="https://img.shields.io/badge/GitHub-Releases-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Releases">
   </a>
 </p>
 
-The APK is distributed through the **GitHub Releases** section.
-
-> The download button points to the APK attached to the latest GitHub Release.
-
----
-
-## Installation
-
-1. Download `Presencia.apk` from the latest GitHub Release.
-2. Open the downloaded APK on your Android device.
-3. Allow installation from the required source if prompted by Android.
-4. Install the application.
-5. Open **Presencia**.
-6. Add your subjects and start recording attendance.
+<p align="center">
+  <img src="https://img.shields.io/badge/Version-1.0.8-blue?style=flat-square" alt="Version 1.0.8">
+  <img src="https://img.shields.io/badge/Platform-Android-3DDC84?style=flat-square&logo=android&logoColor=white" alt="Android">
+  <img src="https://img.shields.io/badge/Language-Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white" alt="Kotlin">
+  <img src="https://img.shields.io/badge/UI-Jetpack%20Compose-4285F4?style=flat-square&logo=jetpackcompose&logoColor=white" alt="Jetpack Compose">
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" alt="MIT License">
+</p>
 
 ---
+
+## About Presencia
+
+**Presencia** is a lightweight Android attendance management application built for students who want a simple and convenient way to keep track of their classes.
+
+Instead of maintaining attendance in notebooks or spreadsheets, Presencia lets you record attendance subject by subject, view your records on a monthly calendar, and automatically calculate your attendance percentage.
+
+Designed around simplicity and privacy, Presencia keeps your attendance records on your device and works without an internet connection.
+
+**Now officially available on F-Droid!**
+
+### Why Presencia?
+
+- **Simple:** Manage subjects and attendance without unnecessary complexity.
+- **Private:** Your attendance records stay on your device.
+- **Offline-first:** No internet connection is needed to use the app.
+- **Lightweight:** Focuses on essential attendance tracking features.
+- **Open source:** The source code is publicly available under the MIT License.
+
+## Download Presencia
+
+<p align="center">
+  <a href="https://f-droid.org/packages/com.shivangsagar.presencia/">
+    <img src="https://img.shields.io/badge/Download_from-F--Droid-1976D2?style=for-the-badge&logo=f-droid&logoColor=white" alt="Download from F-Droid">
+  </a>
+</p>
+
+**Recommended: Install through F-Droid.**
+
+Visit the official listing to install Presencia and access its published releases.
+
+- **Latest release:** v1.0.8
+- **Version code:** 9
+- **Minimum Android version:** Android 7.0 (API 24)
+- **Package name:** `com.shivangsagar.presencia`
+
+Other options:
+
+- [View the latest GitHub Release](https://github.com/shivangsagar/Presencia/releases/latest)
+- [Download the APK from F-Droid](https://f-droid.org/repo/com.shivangsagar.presencia_9.apk)
+- [Browse the source code](https://github.com/shivangsagar/Presencia)
+
+> Installing through the F-Droid client is recommended because it provides update notifications and manages app updates for you.
+
+## Screenshots
+
+<p align="center">
+  <img src="screenshots/black_theme.jpeg" alt="Presencia home screen in dark theme" width="250">
+  &nbsp;&nbsp;
+  <img src="screenshots/second_screen.jpeg" alt="Presencia monthly attendance calendar" width="250">
+  &nbsp;&nbsp;
+  <img src="screenshots/add_subjects.jpeg" alt="Adding subjects in Presencia" width="250">
+</p>
+
+<p align="center">
+  <sub>Home screen · Attendance calendar · Subject management</sub>
+</p>
+
+## Features
+
+### Attendance Management
+
+- Add subjects with custom names.
+- Edit existing subject names.
+- Delete subjects you no longer need.
+- Mark individual dates as **Present** or **Absent**.
+- Remove an attendance entry when you need to correct a record.
+
+### Monthly Attendance Calendar
+
+View attendance records through a calendar-based interface.
+
+- Identify present and absent days using visual indicators.
+- Navigate your attendance records by date.
+- See which dates have been marked and which remain unmarked.
+- Correct individual attendance entries when necessary.
+
+### Automatic Attendance Statistics
+
+Each subject provides a summary of your recorded attendance:
+
+| Statistic | Description |
+|---|---|
+| Present | Number of classes attended |
+| Absent | Number of classes missed |
+| Total | Total number of recorded classes |
+| Percentage | Overall attendance percentage |
+
+The attendance percentage is calculated automatically using:
+
+\[
+\text{Attendance \%} =
+\frac{\text{Present Classes}}{\text{Total Classes}}\times100
+\]
+
+Where:
+
+\[
+\text{Total Classes}=\text{Present}+\text{Absent}
+\]
+
+**Example**
+
+Suppose you attended 18 classes and missed 2 classes.
+
+\[
+\text{Attendance \%}=\frac{18}{18+2}\times100=90\%
+\]
+
+Presencia displays the calculated attendance percentage as an integer.
+
+### Light and Dark Themes
+
+Choose the appearance that suits your preference.
+
+- **Light theme** for a bright, clean interface.
+- **Dark theme** for a darker interface.
+
+Switch between the available themes directly from the home screen.
+
+### Offline by Design
+
+Presencia is designed to work without an internet connection.
+
+- No account or registration.
+- No login required.
+- No cloud synchronization.
+- Attendance records stored locally on your device.
+- No internet connection required for attendance tracking.
+
+Your attendance records remain on your device rather than being uploaded to a remote attendance service.
+
+## Getting Started
+
+### 1. Install Presencia
+
+Install the application from [F-Droid](https://f-droid.org/packages/com.shivangsagar.presencia/).
+
+### 2. Add Your Subjects
+
+Tap the **+** button on the home screen and enter a subject name.
+
+For example:
+
+- Engineering Mathematics
+- Structural Analysis
+- Fluid Mechanics
+- Environmental Engineering
+
+### 3. Record Your Attendance
+
+Open a subject and select the relevant date on the attendance calendar. Mark the class as Present or Absent.
+
+### 4. Review Your Statistics
+
+Check the number of classes attended, classes missed, total recorded classes, and your calculated attendance percentage.
+
+### 5. Manage Your Records
+
+Use the subject's three-dot menu to edit or delete a subject. Correct individual attendance entries whenever necessary.
+
+## Privacy
+
+**Your attendance is personal. Presencia keeps it local.**
+
+Presencia does not require an online account or cloud service to operate. Attendance records are saved locally on your device and are not uploaded to an external attendance server.
+
+| Privacy aspect | Presencia |
+|---|---|
+| Account required | No |
+| Internet required for core functionality | No |
+| Cloud synchronization | No |
+| Attendance stored locally | Yes |
+| Open-source license | MIT |
+
+The app's offline design reduces dependence on third-party services and gives you direct control over your attendance records.
+
+## Built With
+
+Presencia is built using native Android development technologies.
+
+| Technology | Purpose |
+|---|---|
+| [Kotlin](https://kotlinlang.org/) | Primary programming language |
+| [Jetpack Compose](https://developer.android.com/compose) | Declarative UI development |
+| Material 3 | UI components and visual styling |
+| AndroidX | Android libraries and components |
+| Gson | JSON serialization and deserialization |
+| ViewModel | UI state management |
+| Gradle Kotlin DSL | Build configuration and dependency management |
+
+## Technical Details
+
+| Configuration | Value |
+|---|---|
+| Application name | Presencia |
+| Application ID | `com.shivangsagar.presencia` |
+| Latest version | `1.0.8` |
+| Version code | `9` |
+| Minimum SDK | `24` (Android 7.0) |
+| Compile SDK | `37` |
+| Target SDK | `37` |
+| Primary language | Kotlin |
+| UI framework | Jetpack Compose |
+| Build system | Gradle Kotlin DSL |
+| License | MIT |
+
+## Building from Source
+
+Want to explore the implementation or build Presencia yourself?
+
+### Prerequisites
+
+- Android Studio with support for the project's Android Gradle Plugin.
+- A compatible JDK.
+- Android SDK Platform 37 and the SDK/build tools required by the project.
+- Git.
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/shivangsagar/Presencia.git
+cd Presencia
+```
+
+### Build the Debug APK
+
+On Windows:
+
+```powershell
+.\gradlew.bat assembleDebug
+```
+
+On Linux or macOS:
+
+```bash
+./gradlew assembleDebug
+```
+
+The debug APK is normally generated at:
+
+```text
+app/build/outputs/apk/debug/app-debug.apk
+```
+
+### Build the Release Variant
+
+On Windows:
+
+```powershell
+.\gradlew.bat assembleRelease
+```
+
+On Linux or macOS:
+
+```bash
+./gradlew assembleRelease
+```
+
+The release APK is normally generated at:
+
+```text
+app/build/outputs/apk/release/app-release.apk
+```
+
+> Release signing depends on the project's signing configuration. A locally generated release APK is not automatically the same as the officially published APK.
+
+## Project Structure
+
+```text
+Presencia/
+├── app/
+│   └── src/
+│       └── main/
+│           ├── java/ or kotlin/
+│           ├── res/
+│           └── AndroidManifest.xml
+├── assets/
+│   └── app-icon.png
+├── screenshots/
+│   ├── add_subjects.jpeg
+│   ├── black_theme.jpeg
+│   └── second_screen.jpeg
+├── gradle/
+├── build.gradle.kts
+├── settings.gradle.kts
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+├── LICENSE
+└── README.md
+```
+
+*The exact contents of individual directories may vary with the repository's current source tree.*
 
 ## Project Status
 
-**Stable / Completed**
+**Stable · Completed · Open Source**
 
-Presencia **v1.0.1** is the completed and final version of the application.
+Presencia has completed its development and has been officially published on F-Droid.
 
-No further feature updates are planned for this project.
+The current release, **v1.0.8**, represents the completed application. No further feature updates are planned.
 
----
+The repository remains available for anyone who wants to inspect the source code, learn from the implementation, or use the project under the terms of its license.
 
 ## License
 
-This project is licensed under the **MIT License**.
+Presencia is distributed under the **MIT License**.
 
-See the [LICENSE](LICENSE) file for the complete license text.
+You are free to use, copy, modify, merge, publish, distribute, sublicense, and sell copies of the software, subject to the license terms.
 
----
+See the [LICENSE](LICENSE) file for the complete license.
 
 ## Author
 
-**Shivang Sagar**
+<p align="center">
+  <strong>Shivang Sagar</strong>
+  <br>
+  Android · Kotlin · Open Source
+  <br><br>
+  <a href="https://github.com/shivangsagar">GitHub Profile</a>
+  &nbsp; · &nbsp;
+  <a href="https://github.com/shivangsagar/Presencia">Source Code</a>
+  &nbsp; · &nbsp;
+  <a href="https://f-droid.org/packages/com.shivangsagar.presencia/">F-Droid Listing</a>
+</p>
 
-Built with **Kotlin** and **Jetpack Compose**.
+---
+
+<p align="center">
+  <strong>Less paperwork. More clarity. Better attendance tracking.</strong>
+  <br>
+  <sub>Presencia — simple attendance tracking, made for students.</sub>
+</p>
