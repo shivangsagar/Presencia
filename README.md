@@ -293,35 +293,43 @@ The release APK is normally generated at:
 app/build/outputs/apk/release/app-release.apk
 ```
 
-> Release signing depends on the project's signing configuration. A locally generated release APK is not automatically the same as the officially published APK.
-
 ## Project Structure
 
 ```text
 Presencia/
-├── app/
+│
+├── .idea/                              
+│
+├── app/                                
 │   └── src/
 │       └── main/
-│           ├── java/ or kotlin/
-│           ├── res/
-│           └── AndroidManifest.xml
-├── assets/
-│   └── app-icon.png
-├── screenshots/
-│   ├── add_subjects.jpeg
-│   ├── black_theme.jpeg
-│   └── second_screen.jpeg
+│           ├── java/                   
+│           ├── res/                    
+│           └── AndroidManifest.xml     
+│
+├── assets/                             
+│
+├── fastlane/
+│   └── metadata/
+│       └── android/
+│           └── en-US/                  
+│
 ├── gradle/
-├── build.gradle.kts
-├── settings.gradle.kts
-├── gradle.properties
-├── gradlew
-├── gradlew.bat
-├── LICENSE
-└── README.md
+│   └── wrapper/                        
+│
+├── screenshots/                        
+│
+├── .gitignore                          
+├── LICENSE                             
+├── README.md                           
+├── build.gradle.kts                    
+├── gradle.properties                   
+├── gradlew                             
+├── gradlew.bat                         
+└── settings.gradle.kts
+
 ```
 
-*The exact contents of individual directories may vary with the repository's current source tree.*
 
 ## Project Status
 
